@@ -1,6 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
+import InventoryDashboard from "../pages/InventoryDashboard";
+import Layout from "./Layout";
+import Dashboard from "../pages/Dashboard";
+import Departments from "../pages/Departments";
+import Products from "../pages/Products";
+import AddProductForm from "../pages/AddProductForm";
 
 export default function Routing() {
   return (
@@ -8,7 +13,43 @@ export default function Routing() {
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={
+            <Layout>
+              <InventoryDashboard />
+            </Layout>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <Layout>
+              <Dashboard />
+            </Layout>
+          }
+        />
+        <Route
+          path="/departments"
+          element={
+            <Layout>
+              <Departments />
+            </Layout>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <Layout>
+              <Products />
+            </Layout>
+          }
+        />
+        <Route
+          path="/add-new-product"
+          element={
+            <Layout>
+              <AddProductForm />
+            </Layout>
+          }
         />
       </Routes>
     </>

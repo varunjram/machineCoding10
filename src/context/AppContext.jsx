@@ -6,7 +6,16 @@ const AppContextProvider = ({ children }) => {
 
   const context = { ...state, dispatch };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const existingProducts = JSON.parse(localStorage.getItem("newProducts"));
+    console.log("existingProducts:context ", existingProducts);
+    if (existingProducts) {
+      dispatch({
+        type: "UpdateProductList",
+        payload: [...state.inventoryData, ...existingProducts],
+      });
+    }
+  }, []);
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>;
 };
