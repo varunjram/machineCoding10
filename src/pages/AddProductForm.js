@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const AddProductForm = () => {
-  const { inventoryData, filterBy } = useAppContext();
+  const { inventoryData, filterBy, dispatch } = useAppContext();
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -53,6 +53,10 @@ const AddProductForm = () => {
 
       if (existingProducts) {
         localStorage.setItem("newProducts", JSON.stringify([...existingProducts, newProduct]));
+        dispatch({
+          type: "UpdateProductList",
+          payload: [...inventoryData, newProduct],
+        });
       } else {
         localStorage.setItem("newProducts", JSON.stringify([newProduct]));
       }
