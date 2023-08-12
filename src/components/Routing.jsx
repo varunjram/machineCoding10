@@ -11,14 +11,14 @@ export default function Routing() {
   return (
     <>
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <Layout>
               <InventoryDashboard />
             </Layout>
           }
-        />
+        /> */}
         <Route
           path="/"
           element={
