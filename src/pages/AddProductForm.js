@@ -64,7 +64,7 @@ const AddProductForm = () => {
       console.log("newProduct: ", newProduct);
 
       formik.resetForm();
-      navigate("/products");
+      navigate(`/product/${newProduct.id}`);
     },
   });
 

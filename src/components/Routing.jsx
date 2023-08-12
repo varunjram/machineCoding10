@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import InventoryDashboard from "../pages/InventoryDashboard";
 import Layout from "./Layout";
 import Dashboard from "../pages/Dashboard";
 import Departments from "../pages/Departments";
 import Products from "../pages/Products";
 import AddProductForm from "../pages/AddProductForm";
+import ProductDisplay from "../pages/ProductDisplay";
 
 export default function Routing() {
   return (
@@ -48,6 +48,14 @@ export default function Routing() {
           element={
             <Layout>
               <AddProductForm />
+            </Layout>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <Layout>
+              <ProductDisplay />
             </Layout>
           }
         />
