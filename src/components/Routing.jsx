@@ -20,7 +20,7 @@ export default function Routing() {
           }
         />
         <Route
-          path="/dashboard"
+          path="/"
           element={
             <Layout>
               <Dashboard />
